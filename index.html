@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile Card</title>
+  <!-- Insert TailwindCSS CDN link here -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex font-[sans-serif] justify-center items-center min-h-screen bg-gray-200">
+  <img src="./images/2.jpg" alt="design" id="small" style="position: absolute; opacity: 33%" class="hidden md:hidden" />
+  <img src="./images/1.jpg" alt="design" id="larg" style="position: absolute; opacity: 33%" class="hidden" />
+  <button id="btn" onclick="togg()"
+    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded absolute top-3 right-3">
+    Show Design
+  </button>
+  <script>
+    var show = 0;
+
+    function togg() {
+      if (show) {
+        // small.style.display= 'none';
+        // larg.style.display= 'none';
+        small.classList.remove("sm:inline");
+        larg.classList.remove("md:inline");
+        show = 0;
+        btn.textContent = "Show Design";
+        btn.classList.add("bg-green-500", "hover:bg-green-700");
+        btn.classList.remove("bg-red-500", "hover:bg-red-700");
+      } else {
+        show = 1;
+        // small.style.display= 'inline';
+        // larg.style.display= 'inline';
+        small.classList.add("sm:inline");
+        larg.classList.add("md:inline");
+        btn.textContent = "Hide Design";
+        btn.classList.add("bg-red-500", "hover:bg-red-700");
+        btn.classList.remove("bg-green-500", "hover:bg-green-700");
+      }
+    }
+  </script>
+  <!-- Start building your user profile card here -->
+  <div
+    class="card flex md:flex-col justify-center items-center max-w-96 max-h-36 md:max-h-[395px] md:max-w-[480px] bg-white rounded-2xl p-5 md:p-12">
+    <img src="./images/images.png"
+      class="border-solid border-2 border-sky-200 rounded-full w-24 h-24 md:w-32 md:h-32 my-4" alt="avatar" />
+    <div class="flex flex-col ml-5 md:ml-0 items-start justify-center md:items-center w-[110%]">
+      <h1 class="text-sm font-medium md:text-[24px] mb-[-3px]">
+        Alex Johnson
+      </h1>
+
+      <p class="text-sm font-medium md:text-[18px] md:my-2 text-gray-600 p-0">
+        Software Developer
+      </p>
+
+      <p
+        class="font-medium text-sm md:text-[18px] text-gray-600 py-1 md:px-0 md:text-center md:text-[21px] md:mb-8 md:mt-3 mb-1 ">
+        Passionate developer with a love for creating intutive user experence
+      </p>
+      <button
+        class="bg-blue-500 text-white p-1 px-2 md:font-semibold md:text-xl md:p-3 md:m-2 md:mb-6 md:px-5 rounded-full hover:bg-blue-700">
+        Follow
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>
